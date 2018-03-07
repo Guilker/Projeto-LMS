@@ -1,25 +1,25 @@
 # Projeto-LMS
 
-Colaboradores
+## Colaboradores
 
-Nicholas Oliveira
+* Nicholas Oliveira
 RA 1701501
 
-Luan Pereira
+* Luan Pereira
 RA 1701511
 
-Guilherme Toffoli
+* Guilherme Toffoli
 RA 1701679
 
-Anderson Pissulin
+* Anderson Pissulin
 RA 1701246
 
-Bruno Riquetto
+* Bruno Riquetto
 RA 1701415
 
-Gabriel Gimenez
+* Gabriel Gimenez
 Ra 1701602
 
-Felipe Barreto
+* Felipe Barreto
 RA 1701353
 
