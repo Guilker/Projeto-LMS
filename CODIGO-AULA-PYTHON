@@ -1,5 +1,6 @@
 
-listageral = [("anderson", "08 05 1500","193330","ads"),("dougls", "15 80 1600","203489","ads")]
+listageral = [("anderson", "08 05 1500","193330","si"),("dougls", "15 80 1600","203489","ads")]
+ctt = 0
 
 def exibirMenu():
     print("\n1 - Inserir novo Aluno")
@@ -23,7 +24,8 @@ def Cadastrar():
     mais = input("Mais alunos? (s/n): ")
     if mais == 'N' or mais == 'n':
         pass
-          
+    else:
+        Cadastrar()
    
     
 def listarCursos():
@@ -38,13 +40,13 @@ def listarCursos():
             teste = 1
 
     if teste == 0:
-        teste = 2
+        teste = 2 #Validar se o usuario ja passou por aqui
         print ("\nCadastro não encontrado")
                 
 
     botao = input("\nTecle algo para voltar ao menu de opções")
     if botao != "curintias e sao paulo tem um caso":
-        return exibirMenu()
+        ctt = 2
         
 def listarAlunos():
     global listageral
@@ -63,24 +65,26 @@ def listarAlunos():
 
     botao = input("\nTecle algo para voltar ao menu de opções: ")
     if botao != "curintias e sao paulo tem um caso":
-        return exibirMenu()
-        
+        ctt = 2
           
 
-
-while True:
-    
-    opcao = exibirMenu()
-    
-    if opcao == 4:
-        break
-    elif opcao == 2:
-        listarCursos()
-        continue
-    elif opcao == 3:
-        listarAlunos()
-        continue    
-    elif opcao == 1:
-        Cadastrar()
+if(ctt == 2):
+    exibirMenu()
+else:
+    while True:
         
-     
+        opcao = exibirMenu()
+        
+        if opcao == 4:
+            resposta = input('Digite realmente sair? s / n: ')
+            if(resposta=='s'):
+                break
+        elif opcao == 2:
+            listarCursos()
+            continue
+        elif opcao == 3:
+            listarAlunos()
+            continue    
+        elif opcao == 1:
+            Cadastrar()
+    
