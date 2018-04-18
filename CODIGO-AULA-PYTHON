@@ -1,0 +1,86 @@
+
+listageral = [("anderson", "08 05 1500","193330","ads"),("dougls", "15 80 1600","203489","ads")]
+
+def exibirMenu():
+    print("\n1 - Inserir novo Aluno")
+    print("2 - Listar alunos de um curso")
+    print("3 - Listar alunos de um determinado ano")
+    print("4 - Terminar programa\n")
+    opcao = int(input("Escolha uma opcao: "))
+    return opcao
+
+def Cadastrar():
+    global listageral
+    novoAluno = input("Digite o nome do Aluno: ")
+    dtnasc = input("Digite o data de nascimento: ")
+    ra = input("Digite RA:")
+    curso = input("Digite o Curso:")
+    tupla = (novoAluno, dtnasc, ra, curso)
+    listageral.append(tupla)
+    
+   
+      
+    mais = input("Mais alunos? (s/n): ")
+    if mais == 'N' or mais == 'n':
+        pass
+          
+   
+    
+def listarCursos():
+    teste = 0
+    global listageral
+    #Alunos por curso
+    curso = input("Digite o curso: ")
+    for elemento in listageral:
+        
+        if elemento[3] == curso:
+            print ("\n",elemento)
+            teste = 1
+
+    if teste == 0:
+        teste = 2
+        print ("\nCadastro não encontrado")
+                
+
+    botao = input("\nTecle algo para voltar ao menu de opções")
+    if botao != "curintias e sao paulo tem um caso":
+        return exibirMenu()
+        
+def listarAlunos():
+    global listageral
+    teste = 0
+  #Alunos por ANO
+    ano= input("Digite o ano: ")
+    for elemento in listageral:
+        dados = elemento[1]
+        lista = dados.split()
+        if lista[2] == ano:
+            print("\n",elemento)
+            teste = 1
+    if teste == 0:
+        teste = 2
+        print("\nCadastro nao encontrado")
+
+    botao = input("\nTecle algo para voltar ao menu de opções: ")
+    if botao != "curintias e sao paulo tem um caso":
+        return exibirMenu()
+        
+          
+
+
+while True:
+    
+    opcao = exibirMenu()
+    
+    if opcao == 4:
+        break
+    elif opcao == 2:
+        listarCursos()
+        continue
+    elif opcao == 3:
+        listarAlunos()
+        continue    
+    elif opcao == 1:
+        Cadastrar()
+        
+     
